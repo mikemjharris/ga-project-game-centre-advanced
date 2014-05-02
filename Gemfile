@@ -5,7 +5,7 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'pg'
 gem 'ransack', '1.1.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -13,12 +13,12 @@ gem 'cancan', '1.6.10'
 gem 'carrierwave', '0.9.0' #remove for heroku
 gem 'rmagick'
 
-
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-stack_explorer'
   gem 'binding_of_caller'
-  gem 'better_errors'  
+  gem 'better_errors'   
+  gem 'sqlite3'
   
 end
 
