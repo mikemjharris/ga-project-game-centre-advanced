@@ -1,0 +1,37 @@
+
+
+<div class="right_menu">
+
+       <ul>
+  
+  <li><b><%= current_user.name.capitalize %>'s Score</b></li>
+  <table> 
+    <tr>
+    <th>P</th><th>W</th><th>D</th><th>L</th>
+    </tr>
+    <tr>
+      <td><%= current_user.games_played.count %> </td>
+      <td><%= current_user.games_all_won.count%> </td>
+      <td><%= current_user.games_all_drawn.count %> </td>
+      <td><%= current_user.games_all_lost.count %> </td>
+    </tr>
+  </table>
+</li>
+<li>
+  <%= link_to 'Full Scoreboard', scoreboard_path(current_user) %>
+  </li>
+        <li><%= link_to games_path(current_user) do %>
+              <div class="notif_anchor">Live Games
+              <% if live_games > 0 %>
+              <div class="notification"><%= live_games %></div>
+              <% end %>
+            </div>
+              
+              <% end %> 
+        </li>
+
+  </ul>
+
+</div>
+
+

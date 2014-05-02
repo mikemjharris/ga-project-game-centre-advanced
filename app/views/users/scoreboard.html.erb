@@ -1,0 +1,51 @@
+<h1>Scoreboard</h1>
+<table class="scoreboard">
+  <tr>
+  <th>Opponent</th><th>Played</th><th>Won</th><th>Drawn</th><th>Lost</th>
+</tr>
+<tr>
+    <td><%= link_to 'All',games_path(current_user, which_games: "all")  %></td>
+    <td><%= current_user.games_played.count %></td>
+    <td><%= current_user.games_all_won.count %></td>
+    <td><%= current_user.games_all_drawn.count %></td>
+    <td><%= current_user.games_all_lost.count %></td>
+
+  </tr>
+
+  <tr>
+    <td><%= link_to 'Computer',games_path(current_user, which_games: "all")  %></td>
+    <td><%= current_user.games_computer.count %></td>
+    <td><%= current_user.games_computer_won.count %></td>
+    <td><%= current_user.games_computer_drawn.count%></td>
+    <td><%= current_user.games_computer_lost.count  %></td>
+
+  </tr>
+  <tr>
+    <td><%= link_to 'Player Two',games_path(current_user, which_games: "all")  %></td>
+    <td><%= current_user.games_player_two.count %></td>
+    <td><%= current_user.games_player_two_won.count %></td>
+    <td><%= current_user.games_player_two_drawn.count %></td>
+    <td><%= current_user.games_player_two_lost.count  %></td>
+
+  </tr>
+  <tr>
+    <td><%= link_to 'User',games_path(current_user, which_games: "all")  %></td>
+    <td><%= current_user.games_user.count %></td>
+    <td><%= current_user.games_user_won.count %></td>
+    <td><%= current_user.games_user_drawn.count%></td>
+    <td><%= current_user.games_user_lost.count  %></td>
+
+  </tr>
+  
+  
+  
+</table>
+  
+    
+  
+
+
+
+
+
+
