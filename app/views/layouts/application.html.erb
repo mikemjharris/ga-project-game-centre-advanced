@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
   
   <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=320;">
 </head>
 <body>
  <nav>
@@ -27,6 +28,8 @@
         <%= link_to 'Sign up', new_user_path %>
         </div>
       <% end %>
+      <%= render partial: 'layouts/leftmenu' %> 
+      <%= render partial: 'layouts/rightmenu' %>
 
 </nav>
 
