@@ -32,10 +32,6 @@
       <%= render partial: 'layouts/rightmenu' %>
 
 </nav>
-
-<main>
-<%= yield %>
-</main>
 <% unless @noleftmenu %>
   <%= render partial: 'layouts/leftmenu' %>  
 <% end %>
@@ -43,6 +39,10 @@
 <% unless @noleftmenu %>
   <%= render partial: 'layouts/rightmenu' %>  
 <% end %>
+<main>
+<%= yield %>
+</main>
+
 
 
 
