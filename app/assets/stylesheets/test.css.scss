@@ -97,6 +97,7 @@ b {
 
 body{
   height: 100%;
+  min-width: 850px;
 }
 
 a {
@@ -125,7 +126,8 @@ a:hover {
 main .left_menu {
   position: relative;
   width: 500px;
-  margin: 50px auto;
+  margin: 0px auto;
+  float: none;
   top: 80px;
   left: auto;
   display: inline;
@@ -140,9 +142,10 @@ main .left_menu {
   text-align: center;
   width: 20%;
   display: inline-block;
-  position: absolute;
-  top: 20%;
-  left: 3%;
+  float:left;
+  margin-top:150px;
+  /*top: 20%;
+  left: 3%;*/
 
   a {
     padding: 10px;
@@ -158,8 +161,8 @@ main .left_menu {
 
 .right_menu{
   @extend .left_menu;
-  right: 3%;
-  left: auto;
+  
+  float: right;
   table{
     margin: 0 auto;
     margin-top: 10px;
@@ -241,9 +244,9 @@ li {
 }
 
 nav {
-  position: absolute;
-  top: 2%;
-  left: 2%;
+  margin-top: 2%;
+  margin-left: 2%;
+  position: relative;
   .profile-pic {
     position: absolute;
     width: 75px;
