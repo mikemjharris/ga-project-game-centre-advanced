@@ -1,5 +1,14 @@
-@media screen and (max-width: 460px) {
+
+
+@media screen and (max-width: 850px) {
   body{
   min-width: 0px !important;
   }
+  side_menu .left_menu, side_menu >.right_menu{
+    display: none !important;
+  }
+  .game_container {
+    width: 100% !important;
+  }
+
 }
