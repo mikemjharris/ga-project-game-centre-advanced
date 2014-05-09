@@ -1,4 +1,5 @@
 
+    
     <% (0...9).each do |i| %>
      <div class="box<%= i %>">
         <%= link_to '', ttt_moves_path(@ttt, :player_move => 2 ** (8-i)), :method => :post  %>
@@ -11,6 +12,7 @@
       </div>
     </div>
     <% end %>
+    
      
 
 

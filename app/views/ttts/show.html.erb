@@ -9,16 +9,14 @@
   <div class="<%= active_player(2) %> player_two"><%= render :partial => '/layouts/cross' %><%= player_two %></div>
 </div>
 
-<% if @ttt.winner %>
-  <div class="winner"><%= winner_name(@ttt) %></div>
-<% end %>
 
-<div class="game_container">
+
+
+  <div class="game_container">
   
     <%= render partial: '/ttts/board' %>
-    
-         
-</div>  
+  </div>
+
 
 
 

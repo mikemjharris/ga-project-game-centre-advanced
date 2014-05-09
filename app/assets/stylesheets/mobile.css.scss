@@ -2,13 +2,23 @@
 
 @media screen and (max-width: 850px) {
   body{
-  min-width: 0px !important;
+  /*min-width: 0px !important;*/
   }
-  side_menu .left_menu, side_menu >.right_menu{
+  .side_menu > .left_menu, .side_menu >.right_menu{
     display: none !important;
   }
   .game_container {
-    width: 100% !important;
+    /*width: 100% !important;*/
   }
-
+  .vs, .player_one, .player_two {
+    width: 45% !important;
+    
+  }
+  .vs {
+    display: none !important
+  }
 }
+
+/*@media screen and (max-width: 460px) {
+  background: $color;
+}*/

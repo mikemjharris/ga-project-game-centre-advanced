@@ -91,13 +91,11 @@ b {
   font-size: 1.2em;
 }
 
-@media screen and (max-width: 460px) {
-  background: $color;
-}
+
 
 body{
   height: 100%;
-  min-width: 1050px;
+  /*min-width: 1050px;*/
 }
 
 a {
@@ -176,12 +174,18 @@ main .left_menu {
 
 
 main {
-  width: 80%;
-  max-width: 600px;
-  
+  /*width: 80%;  square*/
+  /*width: 50%;*/
+  /*max-width: 600px;*/
+  text-align: center;
   margin: 0 auto; 
   position: relative;
 }
+.square {
+    width: 60%;
+    padding-bottom: 60%;
+    margin: 0 auto;
+  }
 
 .score, .errors p, .flash p {
   border-radius: $button_radius;
@@ -326,13 +330,15 @@ nav {
   .players {
     font-size: 2em;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto; /*square*/
     font-size: 0;
     .vs, .player_one, .player_two {
-      font-size: 2rem;
-      width: 40%;
+      font-size: 1.75rem;
+      width: 19%;
       display: inline-block;
-      padding: 10px 0;
+      padding: 1%  2% ;
+      margin: 0%  2% ;
+      word-wrap: break-word;
     }  
     .vs {
       width: 10%;
@@ -359,10 +365,13 @@ nav {
   
 .game_container {
   font-size: 0;
-  width: 600px;
-  height: 600px;
+  width: 60vh;
+  height: 60vh;
   padding: 0px;
   display: inline-block;
+  margin: 0 auto;
+  position: relative;
+
 
 }
 .game_container > div{
@@ -382,6 +391,7 @@ nav {
   height: 100%;
   background: none;
   z-index: 20;
+  left: 0;
 }
 .game_container form > div  {
   position: absolute;
@@ -389,15 +399,17 @@ nav {
 
 .winner {
   position: absolute;
-  top: 50%;
-  left: 100px;
+  top: 34%;
+  left: 10vh;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1rem;
   text-align: center;
   z-index: 100;
-  width: 400px;
+  width: 40vh;
   background: white;
-  padding: 20px;
+  padding: 10px;
+  border: 3px solid #63add0;
+
 }
 
 .showpiece {
@@ -425,6 +437,7 @@ nav {
 
 svg {
   position:absolute;
+  left: 0;
 }
 
 .cross line{

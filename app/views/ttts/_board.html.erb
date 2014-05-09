@@ -11,6 +11,10 @@
       </div>
     </div>
     <% end %>
+    <% if @ttt.winner %>
+  <p class="winner"><%= winner_name(@ttt) %></p>
+<% end %>
+
      
 
 
