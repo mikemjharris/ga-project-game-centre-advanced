@@ -14,9 +14,11 @@ module TttsHelper
   end
 
   def computer
-      unless @ttt.moves.empty? || @ttt.moves.order.last.player == 1
+    if @ttt.computer
+      unless @ttt.moves.empty? || @ttt.moves.order.last.player == 1 
         @computer_move = @ttt.moves.order(:created_at).last.player_move
       end
+    end
   end
   def errors
    
@@ -67,7 +69,7 @@ module TttsHelper
     elsif @ttt.computer
       "Comp."
     else
-      "Player Two"
+      "P2"
     end
   end
 

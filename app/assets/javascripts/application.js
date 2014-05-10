@@ -18,10 +18,9 @@
 
 $(document).ready(function(){
   
-  // $('li a').on("click", function(ev) {
-  //     ev.preventDefault;
-  //     alert("hello");
-  // })
+  setInterval(function() {
+        console.log("hello");
+      }, 1000);
   
   console.log("running");
 

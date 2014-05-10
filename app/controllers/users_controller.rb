@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
       @q = User.search(params[:q])
       @users = @q.result(distinct: true)
-
   end
 
     def update 
@@ -77,29 +76,25 @@ class UsersController < ApplicationController
   end
 
   def scoreboard
-    @user = User.find(params[:id])
-    @games_vs_computer = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1).count 
-    @games_vs_computer_won = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 1).count 
-    @games_vs_computer_lost = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 2).count 
-    @games_vs_computer_drawn = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 0).count   
+    # @user = User.find(params[:id])
+    # @games_vs_computer = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1).count 
+    # @games_vs_computer_won = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 1).count 
+    # @games_vs_computer_lost = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 2).count 
+    # @games_vs_computer_drawn = Ttt.where(live_game: false, player_one_id: @user.id, computer: 1, winner: 0).count   
     
-    @games_vs_player_two = Ttt.where(live_game: false, player_one_id: @user.id, player_two: nil, computer: nil).count 
-    @games_vs_player_two_won = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil, player_two: nil, winner: 1).count 
-    @games_vs_player_two_lost = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil, player_two: nil, winner: 2).count 
-    @games_vs_player_two_drawn = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil,player_two: nil, winner: 0).count   
+    # @games_vs_player_two = Ttt.where(live_game: false, player_one_id: @user.id, player_two: nil, computer: nil).count 
+    # @games_vs_player_two_won = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil, player_two: nil, winner: 1).count 
+    # @games_vs_player_two_lost = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil, player_two: nil, winner: 2).count 
+    # @games_vs_player_two_drawn = Ttt.where(live_game: false, player_one_id: @user.id, computer: nil,player_two: nil, winner: 0).count   
     
     
-    
-    @live_games = Ttt.where("(player_one_id = ? or player_two_id = ?) and live_game = ?", @user.id, @user.id, true).count
-
-
-   
-    
-
-
-    
+    @live_games = Ttt.where("(player_one_id = ? or player_two_id = ?) and live_game = ?", @user.id, @user.id, true).count    
   end
 
+  def live_games
+      
+
+  end
 
 
 
