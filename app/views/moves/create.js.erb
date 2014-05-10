@@ -1,0 +1,39 @@
+
+
+var boardHtml =  "<%= escape_javascript(render partial: '/ttts/board' ) %>"
+
+// alert(@computer_move);
+console.log($('.game_container').data('computer'))
+
+
+$('.game_container').html(boardHtml);
+var which_square = 8 - Math.log($('.box0').data('computer'))/Math.log(2);
+
+$('.box' + which_square + ' .piece').removeClass('cross');
+$('.player_one').removeClass('player')
+$('.player_two').addClass('player')
+$('.winner').hide();
+if($('.box0').data('computer') === "") {
+   $('.winner').slideDown();
+} else {
+var delay = Math.random() * 2000
+
+setTimeout(function () {
+            $('.box' + which_square + ' .piece').addClass('cross');
+            $('.box' + which_square + ' .piece').addClass('flash_square');
+            
+      }, delay);
+
+
+
+setTimeout(function () {
+            // $('.box' + which_square + ' .piece').addClass('cross');
+            $('.box' + which_square + ' .piece').removeClass('flash_square');
+            $('.player_one').addClass('player')
+            $('.player_two').removeClass('player')
+            $('.winner').slideDown();
+      }, delay + 500);
+    }
+
+
+

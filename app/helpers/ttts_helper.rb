@@ -13,6 +13,11 @@ module TttsHelper
     end
   end
 
+  def computer
+      unless @ttt.moves.empty? || @ttt.moves.order.last.player == 1
+        @computer_move = @ttt.moves.order(:created_at).last.player_move
+      end
+  end
   def errors
    
     if @move.nil?
@@ -60,7 +65,7 @@ module TttsHelper
     if @ttt.player_two
       @ttt.player_two.name.capitalize
     elsif @ttt.computer
-      "Computer"
+      "Comp."
     else
       "Player Two"
     end

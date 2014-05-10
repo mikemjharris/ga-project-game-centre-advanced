@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// alert('hello')
+
+$(document).ready(function(){
+  
+  // $('li a').on("click", function(ev) {
+  //     ev.preventDefault;
+  //     alert("hello");
+  // })
+  
+  console.log("running");
+
+});

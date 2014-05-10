@@ -95,6 +95,7 @@ b {
 
 body{
   height: 100%;
+  text-align: center;
   /*min-width: 1050px;*/
 }
 
@@ -174,9 +175,7 @@ main .left_menu {
 
 
 main {
-  /*width: 80%;  square*/
   /*width: 50%;*/
-  /*max-width: 600px;*/
   text-align: center;
   margin: 0 auto; 
   position: relative;
@@ -246,11 +245,20 @@ li {
   color:white;
   transition: all 0.2s;
 }
+.flash_square {
+  /*background: blue;*/
+}
+
+
+.flash_square svg line {
+  stroke-width: 10;
+}
 
 nav {
   margin-top: 2%;
   margin-left: 2%;
   position: relative;
+  text-align: left;
   .profile-pic {
     position: absolute;
     width: 75px;
@@ -430,6 +438,8 @@ nav {
   height:90%;
   margin: 5%;
   position: relative;
+  transition: background 0.2s;
+
 }
 
 .nought {
@@ -446,7 +456,9 @@ svg {
 
   stroke:rgb(255,0,0);
   stroke-width:2;
+  transition: all 0.2s;
 }
+
 
 .blank {
   background: none;
