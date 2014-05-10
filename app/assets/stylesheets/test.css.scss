@@ -136,13 +136,20 @@ main .left_menu {
   }
 }
 
-
+.side_menu .left_menu {
+  float: left;
+  margin-top: 150px;
+}
+.side_menu .right_menu {
+  float: right;
+  margin-top: 150px;
+}
 .left_menu {
   text-align: center;
   width: 20%;
   display: inline-block;
-  float:left;
-  margin-top:150px;
+  /*float:left;*/
+  margin-top:20px;
   /*top: 20%;
   left: 3%;*/
 
@@ -160,8 +167,8 @@ main .left_menu {
 
 .right_menu{
   @extend .left_menu;
-  
   float: right;
+
   table{
     margin: 0 auto;
     margin-top: 10px;
