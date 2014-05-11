@@ -7,11 +7,16 @@ if (($('.box0').data('computer') === "")) {
     $('.players').html(playersHtml);
     var which_square = 8 - Math.log($('.box0').data('player'))/Math.log(2);
     var player_class = $('box' + which_square).data('class')
-    $('.box' + which_square + ' .piece').addClass('flash_square');
+    // $('.box' + which_square + ' .piece').addClass('flash_square');
+    setTimeout(function () { 
+            $('.box' + which_square + ' .piece').addClass('flash_square');
+            $('.winner').slideDown();
+      },  100);  
+
     setTimeout(function () { 
             $('.box' + which_square + ' .piece').removeClass('flash_square');
             $('.winner').slideDown();
-      },  1000);
+      },  600);
 
 }  else  {
    var boardHtml =  "<%= escape_javascript(render partial: '/ttts/board' ) %>"

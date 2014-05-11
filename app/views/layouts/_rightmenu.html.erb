@@ -9,11 +9,8 @@
     <tr>
     <th>P</th><th>W</th><th>D</th><th>L</th>
     </tr>
-    <tr>
-      <td><%= current_user.games_played.count %> </td>
-      <td><%= current_user.games_all_won.count%> </td>
-      <td><%= current_user.games_all_drawn.count %> </td>
-      <td><%= current_user.games_all_lost.count %> </td>
+    <tr id="sidescoreboard">
+      <%= render partial: '/ttts/sidescoreboard' %>  
     </tr>
   </table>
 </li>
@@ -22,9 +19,11 @@
   </li>
         <li><%= link_to games_path(current_user) do %>
               <div class="notif_anchor">Live Games
-              <% if live_games > 0 %>
-              <div class="notification" id="live_games"><%= live_games %></div>
-              <% end %>
+                  <% if live_games > 0 %>
+                    <div class="notification" id="live_games"><%= live_games %></div>
+                  <% else %>
+                    <div class="notification hide" id="live_games"><%= live_games %></div>
+                  <% end %>
             </div>
               
               <% end %> 

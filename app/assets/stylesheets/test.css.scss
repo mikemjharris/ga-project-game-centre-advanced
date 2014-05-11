@@ -19,7 +19,9 @@ $button_radius: 7px;
   box-sizing:border-box;
   font-family: 'Comfortaa', 'cursive';
 }
-
+.hide {
+  display: none !important;
+}
 nav .left_menu , nav .right_menu{
   display: none;
 }
@@ -241,6 +243,13 @@ li {
   }
    
 
+#sidescoreboard {
+  transition: all 0.2s;
+}
+#sidescoreboard.flash_square {
+  background:$color_warning;
+}
+
 .notification {
   border-radius: 50%;
   width: 25px;
@@ -255,8 +264,11 @@ li {
   transition: all 0.2s;
   
 }
-.flash_square #live_games {
-    border: 2px solid black;
+
+.flash_square.notification{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
   }
 
 

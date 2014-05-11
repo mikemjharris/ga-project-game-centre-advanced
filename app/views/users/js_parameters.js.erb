@@ -3,9 +3,22 @@ var new_live_games = <%= live_games %>;
 var current_live_games = parseInt($live_games.html());
 
 
-if (!(current_live_games ===  new_live_games)) {
+if (!(current_live_games ===  new_live_games) ) {
   $live_games.html(new_live_games);
-  $live_games.addClass('flash_square');
+  $live_games.removeClass('hide');
+  
+  var scoreboardHtml =  "<%= escape_javascript( render partial: '/ttts/sidescoreboard' ) %>"
+  $('#sidescoreboard').html(scoreboardHtml)
+  $('#sidescoreboard').addClass('flash_square')
+   setTimeout(function () { 
+            $live_games.addClass('flash_square');
+           
+      },  100); 
+  setTimeout(function () { 
+            $live_games.removeClass('flash_square');
+            $('#sidescoreboard').removeClass('flash_square');
+      },  500);  
+
 }
   
 $challenges = $('#challenges');
@@ -16,7 +29,15 @@ var notificationHtml = "<%= escape_javascript(render partial: '/layouts/notifica
 
 if (!(current_challenges ===  new_challenges)) {
   $challenges.html(new_challenges);
-  $challenges.addClass('flash_square');
+  $challenges.removeClass('hide');
+  setTimeout(function () { 
+            $challenges.addClass('flash_square');
+      },  100);
+  setTimeout(function () { 
+            $challenges.removeClass('flash_square');
+      },  500);
+
+  
 };
 
 
