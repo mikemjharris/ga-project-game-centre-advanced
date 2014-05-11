@@ -17,11 +17,53 @@
 // alert('hello')
 
 $(document).ready(function(){
-  
+   
+   var update_params = function () {
+        var ajaxOptions = {
+          url: "/users/js_parameters/js_parameters",
+          type: 'GET',
+          success: function(data) {
+            console.log(data);
+          } ,
+          error: function(data) {
+            console.error("ajax error");
+            console.log(data);
+          }
+        }
+
+        $.ajax(ajaxOptions).done(update_things);
+    };
+
+    var update_board = function () {
+       var data = {}
+       data["id"] = $('.box0').data('game')
+       console.log(data)
+        var ajaxOptions = {
+          url: "/ttts/" + data["id"],
+          type: 'GET',
+          success: function(data) {
+            console.log(data);
+          } ,
+          error: function(data) {
+            console.error("ajax error");
+            console.log(data);
+          }
+        }
+
+        $.ajax(ajaxOptions).done(update_things);
+    };
+
   setInterval(function() {
-        console.log("hello");
+        update_board();
+        update_params();
       }, 1000);
   
+  var update_things = function(data) {
+     // $(".game_container").html(data);
+  }
+
+
+
   console.log("running");
 
 });

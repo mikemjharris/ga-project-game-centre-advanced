@@ -1,0 +1,31 @@
+$live_games = $('#live_games');
+var new_live_games = <%= live_games %>;
+var current_live_games = parseInt($live_games.html());
+
+
+if (!(current_live_games ===  new_live_games)) {
+  $live_games.html(new_live_games);
+  $live_games.addClass('flash_square');
+}
+  
+$challenges = $('#challenges');
+
+var new_challenges = <%= current_user.challenges.count %>;
+var current_challenges = parseInt($challenges.html());
+var notificationHtml = "<%= escape_javascript(render partial: '/layouts/notification' ) %>"
+
+if (!(current_challenges ===  new_challenges)) {
+  $challenges.html(new_challenges);
+  $challenges.addClass('flash_square');
+};
+
+
+
+
+
+  
+
+
+
+
+

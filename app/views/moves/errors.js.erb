@@ -1,0 +1,9 @@
+
+var errorHtml =  "<%= escape_javascript(render partial: '/layouts/errors' ) %>"
+
+if ($('.errors').length === 0) {
+    $('.left_menu').append(errorHtml);
+
+  } else {
+  $('.errors').html(errorHtml);   
+}

@@ -253,15 +253,21 @@ li {
   line-height: 25px;
   color:white;
   transition: all 0.2s;
+  
 }
+.flash_square #live_games {
+    border: 2px solid black;
+  }
+
+
 .flash_square {
-  /*background: blue;*/
-}
-
-
-.flash_square svg line {
+  svg line {
   stroke-width: 10;
+  }
+  
 }
+
+
 
 nav {
   margin-top: 2%;
@@ -448,12 +454,16 @@ nav {
   margin: 5%;
   position: relative;
   transition: background 0.2s;
-
 }
 
 .nought {
   border: 2px solid red;
   border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.nought.piece.flash_square  {
+  border: 5px solid red;
 }
 
 svg {

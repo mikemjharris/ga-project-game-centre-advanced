@@ -8,7 +8,13 @@ class TttsController < ApplicationController
 
   def show
     @ttt = Ttt.find(params[:id])
-     
+
+    respond_to do |format|
+      format.js {render 'show.js.erb'}
+      format.html
+    end
+      
+
   end
 
   def edit

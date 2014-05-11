@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>SirrahGames</title>
+  <%= include_gon %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -28,8 +29,9 @@
         <%= link_to 'Sign up', new_user_path %>
         </div>
       <% end %>
-      <%= render partial: 'layouts/leftmenu' %> 
-      <%= render partial: 'layouts/rightmenu' %>
+
+       <!-- render partial: 'layouts/leftmenu' 
+       render partial: 'layouts/rightmenu'  -->
 
 </nav>
 
@@ -52,7 +54,7 @@
 
 
 
-
+<input id="jsdata" type="hidden" >
 
 </body>
 </html>

@@ -12,6 +12,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan', '1.6.10'
 gem 'carrierwave', '0.9.0' #remove for heroku
 gem 'rmagick'
+gem 'jbuilder'
 
 group :development, :test do
   gem 'pry-rails'
@@ -42,6 +43,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'gon'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

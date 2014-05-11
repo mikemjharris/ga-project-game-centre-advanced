@@ -17,9 +17,21 @@ module TttsHelper
     if @ttt.computer
       unless @ttt.moves.empty? || @ttt.moves.order.last.player == 1 
         @computer_move = @ttt.moves.order(:created_at).last.player_move
+      else
+        0
       end
     end
   end
+
+   def last_player_move
+      unless @ttt.moves.empty? 
+        player_move = @ttt.moves.order(:created_at).last.player_move
+      else
+        0
+      end
+    
+  end
+
   def errors
    
     if @move.nil?
@@ -79,5 +91,18 @@ module TttsHelper
       else
           "player" if @ttt.next_player == i && @ttt.winner.nil?
       end
+  end
+
+  def game_id
+      if params[:id]
+          params[:id]
+      else 
+        @ttt.id
+      end   
+  end
+
+
+  def board_position
+    @ttt.moves.sum(:player_move)
   end
 end

@@ -42,7 +42,14 @@ class MovesController < ApplicationController
         end
       
       else 
-        render '/ttts/show'
+        
+        respond_to do |format|
+          format.js  { render 'errors.js.erb' }#{ render '/tts/ttts.js.erb' }
+          format.html { render '/ttts/show' }
+          # format.js { render json: @errors }
+        end
+
+        
       end
   
 

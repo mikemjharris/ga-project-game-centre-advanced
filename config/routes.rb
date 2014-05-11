@@ -10,6 +10,7 @@ SirrahGames::Application.routes.draw do
   
   resources :numbs
   resources :sessions
+  get 'users/js_parameters/js_parameters', to:  'users#js_parameters', as: 'js_parameters'
   get 'users/:id/games', to:  'users#games', as: 'games'
   get 'users/:id/scoreboard', to:  'users#scoreboard', as: 'scoreboard'
   get 'users/:id/challenges', to:  'users#challenges', as: 'challenges'

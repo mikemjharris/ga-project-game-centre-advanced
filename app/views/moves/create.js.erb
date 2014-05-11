@@ -1,19 +1,28 @@
 
 
-var boardHtml =  "<%= escape_javascript(render partial: '/ttts/board' ) %>"
+if (($('.box0').data('computer') === "")) {
+   var boardHtml =  "<%= escape_javascript( render partial: '/ttts/board' ) %>"
+    var playersHtml =  "<%= escape_javascript( render partial: '/ttts/players' ) %>"
+    $('.game_container').html(boardHtml);
+    $('.players').html(playersHtml);
+    var which_square = 8 - Math.log($('.box0').data('player'))/Math.log(2);
+    var player_class = $('box' + which_square).data('class')
+    $('.box' + which_square + ' .piece').addClass('flash_square');
+    setTimeout(function () { 
+            $('.box' + which_square + ' .piece').removeClass('flash_square');
+            $('.winner').slideDown();
+      },  1000);
 
-// alert(@computer_move);
-console.log($('.game_container').data('computer'))
-
-
-$('.game_container').html(boardHtml);
-var which_square = 8 - Math.log($('.box0').data('computer'))/Math.log(2);
+}  else  {
+   var boardHtml =  "<%= escape_javascript(render partial: '/ttts/board' ) %>"
+   $('.game_container').html(boardHtml);
+   var which_square = 8 - Math.log($('.box0').data('computer'))/Math.log(2);
 
 $('.box' + which_square + ' .piece').removeClass('cross');
 $('.player_one').removeClass('player')
 $('.player_two').addClass('player')
 $('.winner').hide();
-if($('.box0').data('computer') === "") {
+if($('.box0').data('computer') === 0) {
    $('.winner').slideDown();
 } else {
 var delay = Math.random() * 2000
@@ -35,5 +44,5 @@ setTimeout(function () {
       }, delay + 500);
     }
 
-
+};
 

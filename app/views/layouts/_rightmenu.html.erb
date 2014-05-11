@@ -23,7 +23,7 @@
         <li><%= link_to games_path(current_user) do %>
               <div class="notif_anchor">Live Games
               <% if live_games > 0 %>
-              <div class="notification"><%= live_games %></div>
+              <div class="notification" id="live_games"><%= live_games %></div>
               <% end %>
             </div>
               
