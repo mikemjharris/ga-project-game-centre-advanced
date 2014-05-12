@@ -7,16 +7,12 @@ if (!(current_live_games ===  new_live_games) ) {
   $live_games.html(new_live_games);
   $live_games.removeClass('hide');
   
-  var scoreboardHtml =  "<%= escape_javascript( render partial: '/ttts/sidescoreboard' ) %>"
-  $('#sidescoreboard').html(scoreboardHtml)
-  $('#sidescoreboard').addClass('flash_square')
    setTimeout(function () { 
             $live_games.addClass('flash_square');
            
       },  100); 
   setTimeout(function () { 
             $live_games.removeClass('flash_square');
-            $('#sidescoreboard').removeClass('flash_square');
       },  500);  
 
 }
@@ -37,10 +33,18 @@ if (!(current_challenges ===  new_challenges)) {
             $challenges.removeClass('flash_square');
       },  500);
 
-  
 };
 
+if(!($('#sidescoreboard').data("played")===<%= games_played %>)) {
+    var scoreboardHtml =  "<%= escape_javascript( render partial: '/ttts/sidescoreboard' ) %>"
+    $('#sidescoreboard').html(scoreboardHtml)
+    $('#sidescoreboard').data("played", <%= games_played %>)
+    $('#sidescoreboard').addClass('flash_square')
+    setTimeout(function () { 
+            $('#sidescoreboard').removeClass('flash_square');
 
+      },  500);  
+  }
 
 
 

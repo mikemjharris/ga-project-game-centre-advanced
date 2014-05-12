@@ -105,4 +105,7 @@ module TttsHelper
   def board_position
     @ttt.moves.sum(:player_move)
   end
+  def games_played
+    current_user.games_played.count
+  end
 end

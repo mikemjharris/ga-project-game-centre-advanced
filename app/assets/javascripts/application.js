@@ -23,11 +23,11 @@ $(document).ready(function(){
           url: "/users/js_parameters/js_parameters",
           type: 'GET',
           success: function(data) {
-            console.log(data);
+            // console.log(data);
           } ,
           error: function(data) {
             console.error("ajax error");
-            console.log(data);
+            // console.log(data);
           }
         }
 
@@ -37,16 +37,16 @@ $(document).ready(function(){
     var update_board = function () {
        var data = {}
        data["id"] = $('.box0').data('game')
-       console.log(data)
+       // console.log(data)
         var ajaxOptions = {
           url: "/ttts/" + data["id"],
           type: 'GET',
           success: function(data) {
-            console.log(data);
+            // console.log(data);
           } ,
           error: function(data) {
             console.error("ajax error");
-            console.log(data);
+            // console.log(data);
           }
         }
 
