@@ -17,7 +17,12 @@
   .vs {
     display: none !important;
   }
-
+  .players {
+    margin: 1px !important;
+    .player_one, .player_two{
+    font-size: 1.25rem !important;
+    }
+  }
   .no_mobile {
   display: none !important;
   }
